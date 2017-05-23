@@ -1,0 +1,3 @@
+---
+- name: setup a MOTD
+  copy: dest=/etc/motd content="{{ motd_warning }}" 

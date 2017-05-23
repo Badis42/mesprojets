@@ -1,0 +1,10 @@
+php_packages:
+      - php-pdo
+      - php-mysql
+      - php-soap
+      - php-gd
+      
+php_timezone:  Europ/Paris
+php_upload_max_filesize: "20M"
+php_post_max_size: "20M"
+php_memory_limit: "1024M"

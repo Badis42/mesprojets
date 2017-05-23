@@ -1,0 +1,15 @@
+---
+- name: Installation PHP
+  yum: name=php state=present
+ 
+- name: Installation extensions PHP
+  yum: name={{ item }} state=present
+  with_items: "{{php_packages}}"
+
+#- name: sécurisation de php
+  #lineinfile: dest=/etc/php/php.ini  regex=
+
+    
+
+
+

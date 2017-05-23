@@ -1,0 +1,14 @@
+---
+- name: creation du dossier
+  become: yes
+  file: path=/home/{{user}}/{{ item }} state=directory owner={{user}}
+
+- name: creation d'un lien symbolique vers www
+  become: yes
+  file: src=/home/{{user}}/{{ item }} dest=/var/www/{{ item }} state=link
+  
+- name: creation de la configuration nginx
+  become: yes
+  template: src=templates/nginx.j2 dest=/etc/nginx/conf.d/default.conf
+  notify: nginx reload
+ # - name: actiovation du nom du domain

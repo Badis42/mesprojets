@@ -1,0 +1,8 @@
+---
+- name: Add repository
+  become: yes
+  include: yum_repo.yml
+
+- name:  Personnalisation de message d'accueil
+  become: yes
+  include: motd.yml
